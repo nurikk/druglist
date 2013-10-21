@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    h1= title
+        .container(ng-controller='IndexController')
+            input(type='text', ng-model='selected', typeahead='drug.name for drug in known_drugs | filter:$viewValue | limitTo:8', typeahead-on-select='add_drug()')
+            .row
+                table.table
+                    thead
+                        tr
+                            th
+                                small Drug
+                            th(colspan=2)
+                                small Rating
+
+                    tbody
+                        tr(ng-repeat="drug in used_drugs")
+                            td
+                                a(href="#", ng-href="{{drug.url}}", target="_blank") {{drug.name}}
+                            td
+                                rating(value="drug.rating", max="10")
+                            td
+                                button.close(ng-click='remove_drug(drug)') &times;
+
+
+

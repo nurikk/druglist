@@ -1,0 +1,18 @@
+doctype 5
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+
+  body(ng-app="drugmaster")
+    block content
+
+    script(src="/javascripts/angular.min.js")
+    script(src="/javascripts/ui-bootstrap-custom-0.6.0.js")
+    script(src="/javascripts/ui-bootstrap-custom-tpls-0.6.0.js")
+    script(src="/javascripts/angular-local-storage.js")
+
+    script(src="/javascripts/app/app.js")
+    script(src="/javascripts/app/values/known_drugs.js")
+    script(src="/javascripts/app/services/drug_store.js")
+    script(src="/javascripts/app/controllers/index_controller.js")

@@ -1,0 +1,1 @@
+angular.module('drugmaster', ['ui.bootstrap', 'LocalStorageModule']);
